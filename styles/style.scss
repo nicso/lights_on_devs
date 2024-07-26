@@ -20,7 +20,7 @@ body {
 header {
   position: sticky;
   top: 0;
-
+  z-index: 999;
   #navbar {
     display: flex;
     position: relative;
@@ -37,7 +37,6 @@ header {
 
     #logo {
       position: relative;
-
       height: 90px;
       margin-top: 30px;
       filter: drop-shadow(0 0 16px color-opacity($accent-500, 0.4));
@@ -49,10 +48,11 @@ header {
       &::after{
         $size: 2600px;
         position: absolute;
+        pointer-events: none;
         content: '';
         height: $size;
         aspect-ratio: 1;
-        background: radial-gradient(color-opacity($accent-500,0.15) , color-opacity($accent-500,0) 60%);
+        background: radial-gradient(color-opacity($accent-500,0.08) , color-opacity($accent-500,0) 60%);
         top: calc($size/-2 + 50px);
         left: calc($size/-2 + 50px);
         z-index: -999;
@@ -231,13 +231,15 @@ header {
       grid-row-start: 1;
       grid-row-end: 6;
       will-change: opacity;
-      opacity: 0;
+      opacity: 0.6;
       z-index: -40;
       transition: 1s;
+      border: transparent solid 1px;
     }
     &:hover{
       .shadow{
-        opacity: 1;
+        opacity: 0.8;
+        border: $accent-500 solid 1px;
       }
     }
 
@@ -273,6 +275,62 @@ header {
 //#region gallery
 .gallery{
   height: 5000px;
+  $filter-btn-width: 100px;
+  $gallery-elem-size: 400px;
+  .grid{
+    display: grid;
+    background: #ccc;
+    gap: 5px;
+    grid-template-areas:  "a c"
+                          "a b";
+    grid-template-columns: auto 12fr;
+    grid-template-rows:55px 8fr;
+  }
+  .filters{
+    position: sticky;
+    top: 120px;
+    left: 0;
+    height: 50px;
+    width: $filter-btn-width;
+    background: #444;
+    grid-area: a;
+    border-radius: 50px;
+    margin-inline: $margins;
+    transition: 1s;
+    &:hover{
+      height: 500px;
+      width: 400px;
+      border-radius: 30px;
+      margin-right: calc($margins * 2 + $filter-btn-width);
+    }
+  }
+  .search-input{
+    position: sticky;
+    top: 120px;
+    height: 50px;
+    width: 500px;
+    background: #444;
+    grid-area: c;
+    border-radius: 50px;
+  }
+  .mini-grid{
+    margin-left: calc($margins * -2 - $filter-btn-width);
+    grid-area: b;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(auto-fit, minmax($gallery-elem-size, 1fr));
+    justify-content:space-around;
+    justify-items: center;
+  }
+  .grid-elem{
+    width:$gallery-elem-size;
+    aspect-ratio: 1;
+    background: #222;
+    &:hover{
+      background: red;
+    }
+  }
+
 }
 //#endregion
 

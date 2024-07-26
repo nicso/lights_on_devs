@@ -1,0 +1,194 @@
+/*---COLORS---*/
+/*---SIZING---*/
+@font-face {
+  font-family: "lexend";
+  src: url("../fonts/Lexend-VariableFont_wght.woff");
+}
+@font-face {
+  font-family: "archivo";
+  src: url("../fonts/ArchivoBlack-Regular.woff");
+}
+@font-face {
+  font-family: "jakarta";
+  src: url("../fonts/PlusJakartaSans-VariableFont_wght.woff");
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #191B1E;
+  color: #d0d0d0;
+  font-family: jakarta, serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+header #navbar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 60px;
+  justify-content: space-between;
+  background: #191B1E;
+  border-bottom: 1px solid hsl(from #d0d0d0 h s calc(l - 50));
+  padding-inline: 20px;
+}
+header #navbar li {
+  list-style: none;
+}
+header #navbar #logo {
+  height: 90px;
+  margin-top: 30px;
+  filter: drop-shadow(0 0 16px hsl(from #FFD369 h s l/0.4));
+}
+header #navbar #brand {
+  display: flex;
+  align-items: center;
+}
+header #navbar .logo-txt {
+  color: #d0d0d0;
+  background: linear-gradient(to right, #FFD369 50%, #d0d0d0 60%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: nowrap;
+  font-family: archivo, sans-serif;
+  font-size: 2.5vw;
+  font-weight: 900;
+  letter-spacing: -0.2em;
+  word-spacing: 0.2em;
+  padding-right: 10px;
+}
+header #navbar .nav-links {
+  display: flex;
+  gap: 5vw;
+}
+header #navbar .nav-links a {
+  font-size: 1.5em;
+  font-family: jakarta, sans-serif;
+  color: #d0d0d0;
+  text-decoration: none;
+}
+header #navbar #user-tools {
+  display: flex;
+  gap: 1vw;
+}
+
+.btn {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d0d0d0;
+  color: #393E46;
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+.btn:focus {
+  /*TODO: button focus style*/
+}
+.btn:hover {
+  /*TODO: button hover style*/
+}
+.btn-long {
+  display: inline-flex;
+  align-items: center;
+  aspect-ratio: auto;
+  padding-inline: 15px;
+}
+.btn-accent {
+  color: #393E46;
+  background: #FFD369;
+}
+
+.trends {
+  margin-inline: 20px;
+  margin-top: 50px;
+}
+.trends-grid {
+  display: flex;
+  justify-content: space-between;
+}
+.trends .trends-item {
+  display: grid;
+  justify-items: end;
+  grid-template-columns: 2fr 8fr;
+  grid-template-rows: 3fr 2fr 8fr 3fr 2fr;
+  grid-template-areas: "top-left top-right" "top-left top-right2" "mid-left mid-right" "bot-left bot-right" "bot-left bot-right2";
+  position: relative;
+  height: 270px;
+  width: 450px;
+}
+.trends .trends-item-large {
+  width: 720px;
+  grid-template-columns: 2fr 8fr 4fr;
+  grid-template-rows: 3fr 2fr 8fr 3fr 2fr;
+  grid-template-areas: "top-left top-right prev" "top-left top-right2 prev" "mid-left mid-right prev" "bot-left bot-right prev" "bot-left bot-right2 prev";
+}
+.trends .trends-item-large-preview {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  grid-area: prev;
+  z-index: -80;
+}
+.trends .trends-item h2 {
+  grid-area: bot-right;
+  margin-inline: 20px;
+  font-weight: bold;
+  align-self: end;
+}
+.trends .trends-item h3 {
+  grid-area: bot-right2;
+  margin-inline: 20px;
+  font-size: 1em;
+  font-weight: 100;
+}
+.trends .trends-item .avatar {
+  grid-area: bot-left;
+  justify-self: center;
+  align-self: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #d0d0d0;
+}
+.trends .trends-item .tag-list {
+  grid-area: top-right;
+  align-self: center;
+  margin-inline: 20px;
+}
+.trends .trends-item-thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -50;
+  object-fit: contain;
+}
+.trends .trends-item:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: red;
+  z-index: 500;
+}
+
+.tag {
+  border: 1px solid #d0d0d0;
+  background: hsl(from #d0d0d0 h s l/0.2);
+  border-radius: 50px;
+  padding-inline: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

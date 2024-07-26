@@ -1,0 +1,18 @@
+/*---COLORS---*/
+$bg-drk-500: #191B1E;
+$drk-sub-500: #393E46;
+$accent-500: #FFD369;
+$light-500: #d0d0d0;
+
+/*---SIZING---*/
+$margins: 20px;
+$icon-size: 40px;
+
+
+@function color-luminosity($color, $variation){
+ @return hsl(from $color h s calc(l + $variation));
+}
+
+@function color-opacity($color, $variation){
+ @return hsl(from $color h s l / $variation);
+}

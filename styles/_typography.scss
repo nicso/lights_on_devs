@@ -1,0 +1,20 @@
+
+@font-face {
+  font-family: "lexend";
+  src: url("../fonts/Lexend-VariableFont_wght.woff");
+}
+@font-face {
+  font-family: "archivo";
+  src: url("../fonts/ArchivoBlack-Regular.woff");
+}
+@font-face {
+  font-family: "jakarta";
+  src: url("../fonts/PlusJakartaSans-VariableFont_wght.woff");
+}
+
+@mixin font_ui_element($font-size:1em, $font-color:$light-500){
+  font-size: $font-size;
+  font-family: jakarta, sans-serif;
+  color: $font-color;
+  text-decoration: none;
+}

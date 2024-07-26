@@ -239,7 +239,6 @@ header #navbar #user-tools {
 }
 .gallery .grid {
   display: grid;
-  background: #ccc;
   gap: 5px;
   grid-template-areas: "a c" "a b";
   grid-template-columns: auto 12fr;
@@ -251,17 +250,34 @@ header #navbar #user-tools {
   left: 0;
   height: 50px;
   width: 100px;
-  background: #444;
+  background: #d0d0d0;
   grid-area: a;
   border-radius: 50px;
   margin-inline: 20px;
-  transition: 1s;
+  transition: 0.5s;
+}
+.gallery .filters:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  height: 10px;
+  background: #d0d0d0;
+  width: 0;
+  transition: all 0.6s, height 0.2s;
 }
 .gallery .filters:hover {
-  height: 500px;
-  width: 400px;
-  border-radius: 30px;
-  margin-right: 140px;
+  height: 60px;
+  width: 200px;
+  border-radius: 6px 6px 0 0;
+  margin-right: 340px;
+}
+.gallery .filters:hover:after {
+  top: 60px;
+  left: 0;
+  height: 600px;
+  width: 200%;
+  border-radius: 0 6px 6px 6px;
 }
 .gallery .search-input {
   position: sticky;
@@ -271,6 +287,8 @@ header #navbar #user-tools {
   background: #444;
   grid-area: c;
   border-radius: 50px;
+  color: #393E46;
+  background: #d0d0d0;
 }
 .gallery .mini-grid {
   margin-left: -140px;

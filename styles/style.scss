@@ -277,9 +277,9 @@ header {
   height: 5000px;
   $filter-btn-width: 100px;
   $gallery-elem-size: 400px;
+  $round-opened: 6px;
   .grid{
     display: grid;
-    background: #ccc;
     gap: 5px;
     grid-template-areas:  "a c"
                           "a b";
@@ -292,16 +292,36 @@ header {
     left: 0;
     height: 50px;
     width: $filter-btn-width;
-    background: #444;
+    background: $light-500;
     grid-area: a;
     border-radius: 50px;
     margin-inline: $margins;
-    transition: 1s;
+    transition: 0.5s;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 5%;
+      height: 10px;
+      background: $light-500;
+      width: 0;
+      transition: all 0.6s,
+                  height 0.2s;
+    }
     &:hover{
-      height: 500px;
-      width: 400px;
-      border-radius: 30px;
-      margin-right: calc($margins * 2 + $filter-btn-width);
+      height: 60px;
+      width: 200px;
+      //border-radius: 30px;
+      border-radius: $round-opened $round-opened 0 0;
+      margin-right: calc($margins * 2 + $filter-btn-width + 200px);
+      &:after{
+        //transform: scaleY(10);
+        top: 60px;
+        left: 0;
+        height: 600px;
+        width: 200%;
+        border-radius: 0 $round-opened $round-opened $round-opened;
+      }
     }
   }
   .search-input{
@@ -312,6 +332,8 @@ header {
     background: #444;
     grid-area: c;
     border-radius: 50px;
+    color: $drk-sub-500;
+    background: $light-500;
   }
   .mini-grid{
     margin-left: calc($margins * -2 - $filter-btn-width);

@@ -44,6 +44,7 @@ header #navbar li {
   list-style: none;
 }
 header #navbar #logo {
+  position: relative;
   height: 90px;
   margin-top: 30px;
   filter: drop-shadow(0 0 16px hsl(from #FFD369 h s l/0.4));
@@ -51,6 +52,16 @@ header #navbar #logo {
 header #navbar #brand {
   display: flex;
   align-items: center;
+}
+header #navbar #brand::after {
+  position: absolute;
+  content: "";
+  height: 2600px;
+  aspect-ratio: 1;
+  background: radial-gradient(hsl(from #FFD369 h s l/0.15), hsl(from #FFD369 h s l/0) 60%);
+  top: -1250px;
+  left: -1250px;
+  z-index: -999;
 }
 header #navbar .logo-txt {
   color: #d0d0d0;
@@ -116,6 +127,7 @@ header #navbar #user-tools {
 }
 .trends-grid {
   display: flex;
+  gap: 20px;
   justify-content: space-between;
 }
 .trends .trends-item {
@@ -126,13 +138,17 @@ header #navbar #user-tools {
   grid-template-areas: "top-left top-right" "top-left top-right2" "mid-left mid-right" "bot-left bot-right" "bot-left bot-right2";
   position: relative;
   height: 270px;
-  width: 450px;
+  overflow: hidden;
+  max-width: 450px;
+  min-width: 350px;
 }
 .trends .trends-item-large {
-  width: 720px;
+  max-width: 720px;
+  min-width: 550px;
   grid-template-columns: 2fr 8fr 4fr;
   grid-template-rows: 3fr 2fr 8fr 3fr 2fr;
   grid-template-areas: "top-left top-right prev" "top-left top-right2 prev" "mid-left mid-right prev" "bot-left bot-right prev" "bot-left bot-right2 prev";
+  border: 1px solid #FFD369;
 }
 .trends .trends-item-large-preview {
   display: flex;
@@ -172,15 +188,50 @@ header #navbar #user-tools {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: -50;
   object-fit: contain;
+  z-index: -50;
+}
+.trends .trends-item .shadow {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, black, transparent, black);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 6;
+  will-change: opacity;
+  opacity: 0;
+  z-index: -40;
+  transition: 1s;
+}
+.trends .trends-item:hover .shadow {
+  opacity: 1;
 }
 
 .tag {
   border: 1px solid #d0d0d0;
-  background: hsl(from #d0d0d0 h s l/0.2);
+  background: hsl(from #d0d0d0 h s l/0.3);
   border-radius: 50px;
   padding-inline: 20px;
+}
+
+.search {
+  margin: 20px;
+  position: sticky;
+  top: 90px;
+}
+.search-filter, .search-input {
+  font-size: 1.6em;
+  font-family: jakarta, sans-serif;
+  color: #393E46;
+  text-decoration: none;
+  padding: 10px 40px;
+  border-radius: 50px;
+  background: #d0d0d0;
+}
+
+.gallery {
+  height: 5000px;
 }
 
 /*# sourceMappingURL=style.css.map */

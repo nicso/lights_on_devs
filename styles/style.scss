@@ -149,7 +149,7 @@ header {
     justify-items: end;
     grid-template-columns: 2fr 8fr;
     grid-template-rows: 3fr 2fr 8fr 3fr 2fr;
-    grid-template-areas:  "top-left top-right"
+    grid-template-areas:  "top-right top-right"
                           "top-left top-right2"
                           "mid-left mid-right"
                           "bot-left bot-right"
@@ -165,7 +165,7 @@ header {
       min-width: 550px;
       grid-template-columns: 2fr 8fr 4fr;
       grid-template-rows:    3fr 2fr 8fr 3fr 2fr;
-      grid-template-areas:  "top-left top-right prev"
+      grid-template-areas:    "top-right top-right prev"
                               "top-left top-right2 prev"
                               "mid-left mid-right prev"
                               "bot-left bot-right prev"
@@ -277,7 +277,7 @@ header {
   height: 5000px;
   $filter-btn-width: 100px;
   $gallery-elem-size: 400px;
-  $round-opened: 6px;
+  $round-opened: 30px;
   .grid{
     display: grid;
     gap: 5px;
@@ -294,25 +294,28 @@ header {
     width: $filter-btn-width;
     background: $light-500;
     grid-area: a;
-    border-radius: 50px;
+    border-radius: 0 50px 50px 0;
     margin-inline: $margins;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out,
+                border-radius 1.5s ease-in-out,
+                margin 0.4s ease-in-out;
     &:after {
       content: '';
       position: absolute;
       top: 20px;
-      left: 5%;
-      height: 10px;
+      left: 0;
+      height: 600px;
       background: $light-500;
-      width: 0;
-      transition: all 0.6s,
-                  height 0.2s;
+      width: 0px;
+      transition: all 1.5s ease-in-out,
+                  top 0.5s ease-in-out;
+      border-radius: 0 50px 50px 50px;
     }
     &:hover{
       height: 60px;
       width: 200px;
       //border-radius: 30px;
-      border-radius: $round-opened $round-opened 0 0;
+      border-radius: 0 $round-opened 0 0;
       margin-right: calc($margins * 2 + $filter-btn-width + 200px);
       &:after{
         //transform: scaleY(10);
@@ -320,7 +323,7 @@ header {
         left: 0;
         height: 600px;
         width: 200%;
-        border-radius: 0 $round-opened $round-opened $round-opened;
+        border-radius: 0 $round-opened $round-opened 0;
       }
     }
   }

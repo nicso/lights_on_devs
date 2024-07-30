@@ -24,6 +24,7 @@ body {
   background: #191B1E;
   color: #d0d0d0;
   font-family: jakarta, serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -235,7 +236,7 @@ header #navbar #user-tools {
 }
 
 .gallery {
-  height: 5000px;
+  padding-bottom: 300px;
 }
 .gallery .grid {
   display: grid;
@@ -254,7 +255,7 @@ header #navbar #user-tools {
   grid-area: a;
   border-radius: 0 50px 50px 0;
   margin-inline: 20px;
-  transition: all 0.5s ease-in-out, border-radius 1.5s ease-in-out, margin 0.4s ease-in-out;
+  transition: all 0.25s ease-in-out, border-radius 0.5s ease-in-out, margin 0.35s ease-in-out;
 }
 .gallery .filters:after {
   content: "";
@@ -264,7 +265,6 @@ header #navbar #user-tools {
   height: 600px;
   background: #d0d0d0;
   width: 0px;
-  transition: all 1.5s ease-in-out, top 0.5s ease-in-out;
   border-radius: 0 50px 50px 50px;
 }
 .gallery .filters:hover {
@@ -307,6 +307,42 @@ header #navbar #user-tools {
 }
 .gallery .grid-elem:hover {
   background: red;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  flex-flow: row revert;
+}
+footer::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+  height: 2600px;
+  aspect-ratio: 1;
+  background: radial-gradient(hsl(from #FFD369 h s l/0.08), hsl(from #FFD369 h s l/0) 60%);
+  top: -1250px;
+  left: -1250px;
+  z-index: -999;
+}
+footer .logo-txt {
+  color: #d0d0d0;
+  background: linear-gradient(to right, #d0d0d0 50%, #FFD369 60%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: nowrap;
+  font-family: archivo, sans-serif;
+  font-size: 6.5vw;
+  font-weight: 900;
+  letter-spacing: -0.2em;
+  word-spacing: 0.2em;
+  padding-right: 0.3em;
+}
+footer .logo {
+  position: relative;
+  height: 120px;
+  margin-top: 0;
+  filter: drop-shadow(0 0 16px hsl(from #FFD369 h s l/0.4));
 }
 
 /*# sourceMappingURL=style.css.map */

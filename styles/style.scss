@@ -14,6 +14,7 @@ body {
   background: $bg-drk-500;
   color: $light-500;
   font-family: jakarta, serif;
+  overflow-x: hidden;
 }
 
 //#region navigation bar
@@ -57,7 +58,6 @@ header {
         left: calc($size/-2 + 50px);
         z-index: -999;
       }
-
     }
 
     .logo-txt {
@@ -274,7 +274,8 @@ header {
 
 //#region gallery
 .gallery{
-  height: 5000px;
+  //height: 5000px;
+  padding-bottom: 300px;
   $filter-btn-width: 100px;
   $gallery-elem-size: 400px;
   $round-opened: 30px;
@@ -296,9 +297,9 @@ header {
     grid-area: a;
     border-radius: 0 50px 50px 0;
     margin-inline: $margins;
-    transition: all 0.5s ease-in-out,
-                border-radius 1.5s ease-in-out,
-                margin 0.4s ease-in-out;
+    transition: all 0.25s ease-in-out,
+                border-radius 0.5s ease-in-out,
+                margin 0.35s ease-in-out;
     &:after {
       content: '';
       position: absolute;
@@ -307,8 +308,6 @@ header {
       height: 600px;
       background: $light-500;
       width: 0px;
-      transition: all 1.5s ease-in-out,
-                  top 0.5s ease-in-out;
       border-radius: 0 50px 50px 50px;
     }
     &:hover{
@@ -360,5 +359,38 @@ header {
 //#endregion
 
 footer {
-  //height: 2000px;
+  display: flex;
+  align-items: center;
+  flex-flow: row revert;
+  &::after{
+    $size: 2600px;
+    position: absolute;
+    pointer-events: none;
+    content: '';
+    height: $size;
+    aspect-ratio: 1;
+    background: radial-gradient(color-opacity($accent-500,0.08) , color-opacity($accent-500,0) 60%);
+    top: calc($size/-2 + 50px);
+    left: calc($size/-2 + 50px);
+    z-index: -999;
+  }
+  .logo-txt {
+    color: #d0d0d0;
+    background: linear-gradient(to right, $light-500 50% , $accent-500 60% );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-wrap: nowrap;
+    font-family: archivo, sans-serif;
+    font-size: 6.5vw;
+    font-weight: 900;
+    letter-spacing: -0.2em;
+    word-spacing: 0.2em;
+    padding-right: 0.3em;
+  }
+  .logo {
+    position: relative;
+    height: 120px;
+    margin-top: 0;
+    filter: drop-shadow(0 0 16px color-opacity($accent-500, 0.4));
+  }
 }

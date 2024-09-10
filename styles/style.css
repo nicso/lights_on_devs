@@ -271,7 +271,7 @@ header #navbar #user-tools {
   z-index: 900;
   position: sticky;
   color: #393E46;
-  top: 120px;
+  top: 90px;
   left: 0;
   height: 50px;
   width: 100px;
@@ -332,7 +332,7 @@ header #navbar #user-tools {
   z-index: 900;
   margin-top: 20px;
   position: sticky;
-  top: 120px;
+  top: 90px;
   height: 50px;
   width: 500px;
   background: #444;

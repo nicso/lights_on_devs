@@ -7,7 +7,7 @@ $light-500: #d0d0d0;
 /*---SIZING---*/
 $margins: 20px;
 $icon-size: 40px;
-
+$searchbar-stick-top : 90px;
 
 @function color-luminosity($color, $variation){
  @return hsl(from $color h s calc(l + $variation));

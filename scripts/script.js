@@ -1,4 +1,5 @@
 const trends_elems = document.querySelectorAll(".trends-item:not(.trends-item-large)");
+const gallery = document.querySelector(".mini-grid");
 
 class GalleryElement{
     title;
@@ -34,10 +35,16 @@ let item4 = new GalleryElement("Project 4", "https://loremflickr.com/450/270?ran
 let item5 = new GalleryElement("Project 5", "https://loremflickr.com/450/270?random=4", ["tag1", "tag2", "tag3"], user4);
 //endregion
 
+
 let spotlightItems = [item1,item2,item3,item4];
+let galleryElems = [item1,item2,item3,item4,item5];
 
 for (let i = 0; i < trends_elems.length; i++) {
     addSpotlightElement(spotlightItems[i], i);
+}
+
+for (let i = 0; i < galleryElems.length; i++) {
+    addGalleryElement(galleryElems[i]);
 }
 
 function addSpotlightElement(element, i){
@@ -60,9 +67,6 @@ function addSpotlightElement(element, i){
         tags.append(t);
     }
 }
-
-const gallery = document.querySelector(".mini-grid");
-let galleryElems = [item1,item2,item3,item4, item5];
 
 function addGalleryElement(elem) {
     let div = document.createElement("div");
@@ -99,6 +103,4 @@ function addGalleryElement(elem) {
     div.append(tags);
 }
 
-for (let i = 0; i < galleryElems.length; i++) {
-    addGalleryElement(galleryElems[i]);
-}
+

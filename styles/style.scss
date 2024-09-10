@@ -328,7 +328,7 @@ header {
     z-index: 900;
     position: sticky;
     color: $drk-sub-500;
-    top: 120px;
+    top: $searchbar-stick-top;
     left: 0;
     height: 50px;
     width: $filter-btn-width;
@@ -392,7 +392,7 @@ header {
     z-index: 900;
     margin-top: 20px;
     position: sticky;
-    top: 120px;
+    top: $searchbar-stick-top;
     height: 50px;
     width: 500px;
     background: #444;

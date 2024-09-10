@@ -25,6 +25,11 @@ header {
 
   #navbar {
     display: flex;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "logo nav user"
+                          "null null null";
     position: relative;
     align-items: center;
     height: 60px;
@@ -38,7 +43,7 @@ header {
     }
 
     #logo {
-      position: relative;
+      position: absolute;
       height: 90px;
       margin-top: 30px;
       filter: drop-shadow(0 0 16px color-opacity($accent-500, 0.4));
@@ -63,6 +68,8 @@ header {
     }
 
     .logo-txt {
+      position: absolute;
+      left: 120px;
       color: #d0d0d0;
       background: linear-gradient(to right, $accent-500 50%, $light-500 60%);
       background-clip: text;
@@ -79,7 +86,8 @@ header {
     .nav-links {
       display: flex;
       gap: 5vw;
-
+      grid-area: nav;
+      justify-self: center;
       a {
         @include font_ui_element(1.5em);
       }
@@ -87,6 +95,7 @@ header {
     }
 
     #user-tools {
+      justify-self: end;
       display: flex;
       gap: 1vw;
     }
@@ -476,22 +485,14 @@ header {
 //#endregion
 
 footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 12fr 1fr 12fr;
+
+
+
   align-items: center;
   flex-flow: row revert;
 
-  &::after {
-    $size: 2600px;
-    position: absolute;
-    pointer-events: none;
-    content: '';
-    height: $size;
-    aspect-ratio: 1;
-    background: radial-gradient(color-opacity($accent-500, 0.08), color-opacity($accent-500, 0) 60%);
-    top: calc($size / -2 + 50px);
-    left: calc($size / -2 + 50px);
-    z-index: -999;
-  }
 
   .logo-txt {
     color: #d0d0d0;
@@ -500,7 +501,7 @@ footer {
     -webkit-text-fill-color: transparent;
     text-wrap: nowrap;
     font-family: archivo, sans-serif;
-    font-size: 6.5vw;
+    font-size: 5.95vw;
     font-weight: 900;
     letter-spacing: -0.2em;
     word-spacing: 0.2em;

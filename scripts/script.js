@@ -31,6 +31,7 @@ let item1 = new GalleryElement("Project 1", "https://loremflickr.com/450/270?ran
 let item2 = new GalleryElement("Project 2", "https://loremflickr.com/450/270?random=2", ["tag1", "tag2", "tag3"], user2);
 let item3 = new GalleryElement("Project 3", "https://loremflickr.com/450/270?random=3", ["tag1", "tag2", "tag3"], user3);
 let item4 = new GalleryElement("Project 4", "https://loremflickr.com/450/270?random=4", ["tag1", "tag2", "tag3"], user4);
+let item5 = new GalleryElement("Project 5", "https://loremflickr.com/450/270?random=4", ["tag1", "tag2", "tag3"], user4);
 //endregion
 
 let spotlightItems = [item1,item2,item3,item4];
@@ -61,7 +62,7 @@ function addSpotlightElement(element, i){
 }
 
 const gallery = document.querySelector(".mini-grid");
-let galleryElems = [item1,item2,item3,item4];
+let galleryElems = [item1,item2,item3,item4, item5];
 
 function addGalleryElement(elem) {
     let div = document.createElement("div");

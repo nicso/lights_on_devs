@@ -34,6 +34,10 @@ header {
 }
 header #navbar {
   display: flex;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "logo nav user" "null null null";
   position: relative;
   align-items: center;
   height: 60px;
@@ -46,7 +50,7 @@ header #navbar li {
   list-style: none;
 }
 header #navbar #logo {
-  position: relative;
+  position: absolute;
   height: 90px;
   margin-top: 30px;
   filter: drop-shadow(0 0 16px hsl(from #FFD369 h s l/0.4));
@@ -67,6 +71,8 @@ header #navbar #brand::after {
   z-index: -999;
 }
 header #navbar .logo-txt {
+  position: absolute;
+  left: 120px;
   color: #d0d0d0;
   background: linear-gradient(to right, #FFD369 50%, #d0d0d0 60%);
   background-clip: text;
@@ -82,6 +88,8 @@ header #navbar .logo-txt {
 header #navbar .nav-links {
   display: flex;
   gap: 5vw;
+  grid-area: nav;
+  justify-self: center;
 }
 header #navbar .nav-links a {
   font-size: 1.5em;
@@ -90,6 +98,7 @@ header #navbar .nav-links a {
   text-decoration: none;
 }
 header #navbar #user-tools {
+  justify-self: end;
   display: flex;
   gap: 1vw;
 }
@@ -399,20 +408,10 @@ header #navbar #user-tools {
 }
 
 footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 12fr 1fr 12fr;
   align-items: center;
   flex-flow: row revert;
-}
-footer::after {
-  position: absolute;
-  pointer-events: none;
-  content: "";
-  height: 2600px;
-  aspect-ratio: 1;
-  background: radial-gradient(hsl(from #FFD369 h s l/0.08), hsl(from #FFD369 h s l/0) 60%);
-  top: -1250px;
-  left: -1250px;
-  z-index: -999;
 }
 footer .logo-txt {
   color: #d0d0d0;
@@ -421,7 +420,7 @@ footer .logo-txt {
   -webkit-text-fill-color: transparent;
   text-wrap: nowrap;
   font-family: archivo, sans-serif;
-  font-size: 6.5vw;
+  font-size: 5.95vw;
   font-weight: 900;
   letter-spacing: -0.2em;
   word-spacing: 0.2em;

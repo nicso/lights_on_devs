@@ -1,8 +1,10 @@
-@import "variables";
-body{
+/*---COLORS---*/
+/*---SIZING---*/
+body {
   overflow: clip;
 }
-#login{
+
+#login {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10,59 +12,68 @@ body{
   width: 400px;
   justify-content: space-around;
   font-size: 1.5em;
-  margin: 50px auto ;
-  border: 1px solid $light-500;
+  margin: 50px auto;
+  border: 1px solid #d0d0d0;
   padding: 100px;
   border-radius: 20px;
-  background: $bg-drk-500;
+  background: #191B1E;
   box-shadow: 20px 20px 80px black;
 }
-.d-flex{
+
+.d-flex {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-label{
+
+label {
   box-sizing: border-box;
   display: inline-block;
   margin-bottom: 10px;
   font-size: 0.9em;
 }
-input{
+
+input {
   font-size: 1em;
   width: 100%;
-  border: 1px solid $light-500;
+  border: 1px solid #d0d0d0;
   border-radius: 5px;
-  background: $bg-drk-500;
-  color: $light-500;
+  background: #191B1E;
+  color: #d0d0d0;
 }
-button{
+
+button {
   font-size: 1em;
   margin-bottom: 120px;
 }
-p{
-  align-self: center;
-  text-align: center;
 
-}
-a{
-  font-size: 0.8em;
-  color: $accent-500;
+p {
   align-self: center;
   text-align: center;
 }
-.error{
+
+a {
+  font-size: 0.8em;
+  color: #FFD369;
+  align-self: center;
+  text-align: center;
+}
+
+.error {
   animation: fadeOut 3s forwards;
   color: red;
   position: absolute;
   bottom: 60px;
 }
+
 @keyframes fadeOut {
-  50%{
+  50% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
-    color: $accent-500;
+    color: #FFD369;
   }
 }
+
+/*# sourceMappingURL=login.css.map */

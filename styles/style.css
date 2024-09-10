@@ -246,6 +246,8 @@ header #navbar #user-tools {
   grid-template-rows: 55px 8fr;
 }
 .gallery .filters {
+  margin-top: 20px;
+  color: #393E46;
   position: sticky;
   top: 120px;
   left: 0;
@@ -256,6 +258,12 @@ header #navbar #user-tools {
   border-radius: 0 50px 50px 0;
   margin-inline: 20px;
   transition: all 0.25s ease-in-out, border-radius 0.5s ease-in-out, margin 0.35s ease-in-out;
+}
+.gallery .filters .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 2.5em;
+  margin-top: 5px;
+  margin-left: 15px;
 }
 .gallery .filters:after {
   content: "";
@@ -281,6 +289,7 @@ header #navbar #user-tools {
   border-radius: 0 30px 30px 0;
 }
 .gallery .search-input {
+  margin-top: 20px;
   position: sticky;
   top: 120px;
   height: 50px;
@@ -292,6 +301,7 @@ header #navbar #user-tools {
   background: #d0d0d0;
 }
 .gallery .mini-grid {
+  margin-top: 40px;
   margin-left: -140px;
   grid-area: b;
   display: grid;

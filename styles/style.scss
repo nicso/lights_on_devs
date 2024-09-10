@@ -287,7 +287,20 @@ header {
     grid-template-columns: auto 12fr;
     grid-template-rows:55px 8fr;
   }
+
   .filters{
+    .material-symbols-outlined {
+      font-variation-settings:
+              'FILL' 0,
+              'wght' 400,
+              'GRAD' 0,
+              'opsz' 24;
+      font-size: 2.5em;
+      margin-top: 5px;
+      margin-left: 15px;
+    }
+    margin-top: 20px;
+    color: $drk-sub-500;
     position: sticky;
     top: 120px;
     left: 0;
@@ -327,6 +340,7 @@ header {
     }
   }
   .search-input{
+    margin-top: 20px;
     position: sticky;
     top: 120px;
     height: 50px;
@@ -338,6 +352,7 @@ header {
     background: $light-500;
   }
   .mini-grid{
+    margin-top: 40px;
     margin-left: calc($margins * -2 - $filter-btn-width);
     grid-area: b;
     display: grid;

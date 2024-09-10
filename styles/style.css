@@ -172,18 +172,12 @@ header #navbar #user-tools {
   font-size: 1em;
   font-weight: 100;
 }
-.trends .trends-item .avatar {
-  grid-area: bot-left;
-  justify-self: center;
-  align-self: center;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid #d0d0d0;
-}
 .trends .trends-item .tag-list {
   grid-area: top-right;
   align-self: center;
   margin-inline: 20px;
+  display: flex;
+  gap: 15px;
 }
 .trends .trends-item-thumb {
   position: absolute;
@@ -195,11 +189,12 @@ header #navbar #user-tools {
   z-index: -50;
 }
 .trends .trends-item .shadow {
+  display: flex;
   width: 100%;
   height: 100%;
   background: linear-gradient(to top, black, transparent, black);
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 6;
   will-change: opacity;
@@ -213,11 +208,25 @@ header #navbar #user-tools {
   border: #FFD369 solid 1px;
 }
 
+.avatar {
+  grid-area: bot-left;
+  justify-self: center;
+  align-self: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #d0d0d0;
+  width: 60px;
+  aspect-ratio: 1;
+}
+
 .tag {
   border: 1px solid #d0d0d0;
   background: hsl(from #d0d0d0 h s l/0.3);
   border-radius: 50px;
   padding-inline: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #d0d0d0;
 }
 
 .search {
@@ -237,6 +246,10 @@ header #navbar #user-tools {
 
 .gallery {
   padding-bottom: 300px;
+  --gallery-elem-size: 400px;
+}
+.gallery:has(.filters:hover) {
+  --gallery-elem-size: 266px;
 }
 .gallery .grid {
   display: grid;
@@ -246,9 +259,9 @@ header #navbar #user-tools {
   grid-template-rows: 55px 8fr;
 }
 .gallery .filters {
-  margin-top: 20px;
-  color: #393E46;
+  z-index: 900;
   position: sticky;
+  color: #393E46;
   top: 120px;
   left: 0;
   height: 50px;
@@ -256,7 +269,9 @@ header #navbar #user-tools {
   background: #d0d0d0;
   grid-area: a;
   border-radius: 0 50px 50px 0;
-  margin-inline: 20px;
+  margin-left: 20px;
+  margin-right: -40px;
+  margin-top: 20px;
   transition: all 0.25s ease-in-out, border-radius 0.5s ease-in-out, margin 0.35s ease-in-out;
 }
 .gallery .filters .material-symbols-outlined {
@@ -275,11 +290,27 @@ header #navbar #user-tools {
   width: 0px;
   border-radius: 0 50px 50px 50px;
 }
+.gallery .filters .filterList {
+  display: none;
+  position: absolute;
+  list-style: none;
+  top: 100px;
+  left: 20px;
+  font-size: 2.8em;
+}
+.gallery .filters .filterList a, .gallery .filters .filterList li {
+  color: #191B1E;
+  text-decoration: none;
+}
 .gallery .filters:hover {
   height: 60px;
   width: 200px;
   border-radius: 0 30px 0 0;
-  margin-right: 340px;
+  margin-right: 290px;
+}
+.gallery .filters:hover .filterList {
+  display: list-item;
+  z-index: 950;
 }
 .gallery .filters:hover:after {
   top: 60px;
@@ -289,6 +320,7 @@ header #navbar #user-tools {
   border-radius: 0 30px 30px 0;
 }
 .gallery .search-input {
+  z-index: 900;
   margin-top: 20px;
   position: sticky;
   top: 120px;
@@ -299,24 +331,71 @@ header #navbar #user-tools {
   border-radius: 50px;
   color: #393E46;
   background: #d0d0d0;
+  border: 1px #393E46 solid;
 }
 .gallery .mini-grid {
   margin-top: 40px;
-  margin-left: -140px;
+  margin-left: -70px;
   grid-area: b;
   display: grid;
   gap: 3px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--gallery-elem-size), 1fr));
   justify-content: space-around;
   justify-items: center;
 }
 .gallery .grid-elem {
-  width: 400px;
+  transition: 0.3s;
+  width: var(--gallery-elem-size);
   aspect-ratio: 1;
   background: #222;
+  display: grid;
+  overflow: clip;
+  position: relative;
+}
+.gallery .grid-elem * {
+  grid-area: 1/1;
+}
+.gallery .grid-elem:before {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.76) 10%, rgba(0, 0, 0, 0) 60%), linear-gradient(to bottom, rgba(0, 0, 0, 0.76) 5%, rgba(0, 0, 0, 0) 60%);
+  height: 100%;
+  width: 100%;
+}
+.gallery .grid-elem h2 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.gallery .grid-elem h3 {
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+}
+.gallery .grid-elem .tags {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  height: 25px;
+  gap: 15px;
+  opacity: 0.4;
+}
+.gallery .grid-elem .avatar {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 .gallery .grid-elem:hover {
-  background: red;
+  background: #FFD369;
+}
+.gallery .grid-elem:hover:before {
+  background: transparent;
+}
+.gallery .grid-elem .thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 footer {

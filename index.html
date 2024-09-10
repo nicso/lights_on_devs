@@ -90,7 +90,7 @@
                 <H3>PROFIL NAME</H3>
                 <div class="tag-list">
                 </div>
-                <div class="shadow"></div>
+                <span class="shadow"></span>
                 <img class="trends-item-thumb" src="https://loremflickr.com/451/272" alt="image description">
             </article>
         </div>
@@ -98,12 +98,18 @@
 
     <section class="gallery">
         <div class="grid">
-            <div class="filters">
-                <span class="material-symbols-outlined">
-                    filter_list
-                </span>
-            </div>
-            <div class="search-input">Search</div>
+                <div class="filters">
+                    <span class="material-symbols-outlined">
+                        filter_list
+                    </span>
+                    <ul class="filterList">
+                       <li><a href="?filter=game">Game</a></li>
+                       <li><a href="?filter=audio">Audio</a></li>
+                       <li><a href="?filter=ux">Ux</a></li>
+                    </ul>
+                </div>
+                <input class="search-input" placeholder="Search..." id="search"></input>
+
             <div class="mini-grid">
                 <div class="grid-elem">test</div>
                 <div class="grid-elem"></div>

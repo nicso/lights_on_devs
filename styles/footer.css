@@ -1,0 +1,41 @@
+/*---COLORS---*/
+/*---SIZING---*/
+@font-face {
+  font-family: "lexend";
+  src: url("../fonts/Lexend-VariableFont_wght.woff");
+}
+@font-face {
+  font-family: "archivo";
+  src: url("../fonts/ArchivoBlack-Regular.woff");
+}
+@font-face {
+  font-family: "jakarta";
+  src: url("../fonts/PlusJakartaSans-VariableFont_wght.woff");
+}
+footer {
+  display: grid;
+  grid-template-columns: 12fr 1fr 12fr;
+  align-items: center;
+  flex-flow: row revert;
+}
+footer .logo-txt {
+  color: #d0d0d0;
+  background: linear-gradient(to right, #d0d0d0 50%, #FFD369 60%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: nowrap;
+  font-family: archivo, sans-serif;
+  font-size: 5.95vw;
+  font-weight: 900;
+  letter-spacing: -0.2em;
+  word-spacing: 0.2em;
+  padding-right: 0.3em;
+}
+footer .logo {
+  position: relative;
+  height: 120px;
+  margin-top: 0;
+  filter: drop-shadow(0 0 16px hsl(from #FFD369 h s l/0.4));
+}
+
+/*# sourceMappingURL=footer.css.map */

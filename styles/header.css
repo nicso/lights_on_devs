@@ -1,0 +1,94 @@
+/*---COLORS---*/
+/*---SIZING---*/
+@font-face {
+  font-family: "lexend";
+  src: url("../fonts/Lexend-VariableFont_wght.woff");
+}
+@font-face {
+  font-family: "archivo";
+  src: url("../fonts/ArchivoBlack-Regular.woff");
+}
+@font-face {
+  font-family: "jakarta";
+  src: url("../fonts/PlusJakartaSans-VariableFont_wght.woff");
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+header #navbar {
+  display: flex;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "logo nav user" "null null null";
+  position: relative;
+  align-items: center;
+  height: 60px;
+  justify-content: space-between;
+  background: #191B1E;
+  border-bottom: 1px solid hsl(from #d0d0d0 h s calc(l - 50));
+  padding-inline: 20px;
+}
+header #navbar li {
+  list-style: none;
+}
+header #navbar #logo {
+  position: absolute;
+  height: 90px;
+  margin-top: 30px;
+  filter: drop-shadow(0 0 16px hsl(from #FFD369 h s l/0.4));
+}
+header #navbar #brand {
+  display: flex;
+  align-items: center;
+}
+header #navbar #brand::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+  height: 2600px;
+  aspect-ratio: 1;
+  background: radial-gradient(hsl(from #FFD369 h s l/0.08), hsl(from #FFD369 h s l/0) 60%);
+  top: -1250px;
+  left: -1250px;
+  z-index: -999;
+}
+header #navbar .logo-txt {
+  position: absolute;
+  left: 120px;
+  color: #d0d0d0;
+  background: linear-gradient(to right, #FFD369 50%, #d0d0d0 60%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-wrap: nowrap;
+  font-family: archivo, sans-serif;
+  font-size: 2.5vw;
+  font-weight: 900;
+  letter-spacing: -0.2em;
+  word-spacing: 0.2em;
+  padding-right: 10px;
+}
+header #navbar .nav-links {
+  display: flex;
+  gap: 5vw;
+  grid-area: nav;
+  justify-self: center;
+}
+header #navbar .nav-links a {
+  font-size: 1.5em;
+  font-family: jakarta, sans-serif;
+  color: #d0d0d0;
+  text-decoration: none;
+}
+header #navbar #user-tools {
+  justify-self: end;
+  display: flex;
+  gap: 1vw;
+}
+header #navbar #user-tools .user-avatar {
+  width: 100%;
+}
+
+/*# sourceMappingURL=header.css.map */

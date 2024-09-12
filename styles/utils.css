@@ -1,0 +1,83 @@
+/*---COLORS---*/
+/*---SIZING---*/
+@font-face {
+  font-family: "lexend";
+  src: url("../fonts/Lexend-VariableFont_wght.woff");
+}
+@font-face {
+  font-family: "archivo";
+  src: url("../fonts/ArchivoBlack-Regular.woff");
+}
+@font-face {
+  font-family: "jakarta";
+  src: url("../fonts/PlusJakartaSans-VariableFont_wght.woff");
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #191B1E;
+  color: #d0d0d0;
+  font-family: jakarta, serif;
+  overflow-x: hidden;
+}
+
+.btn {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d0d0d0;
+  color: #393E46;
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+.btn:focus {
+  /*TODO: button focus style*/
+}
+.btn:hover {
+  background: hsl(from #d0d0d0 h s calc(l * 0.8));
+  /*TODO: button hover style*/
+}
+.btn-long {
+  display: inline-flex;
+  align-items: center;
+  aspect-ratio: auto;
+  padding-inline: 15px;
+}
+.btn-accent {
+  color: #393E46;
+  background: #FFD369;
+}
+.btn-accent:hover {
+  background: hsl(from #FFD369 h s calc(l * 0.8));
+  box-shadow: 0 0 20px hsl(from #FFD369 h s l/0.5);
+  /*TODO: button hover style*/
+}
+
+input, select {
+  font-size: 1em;
+  width: 100%;
+  border: 1px solid rgba(255, 211, 105, 0.3);
+  border-radius: 5px;
+  background: #191B1E;
+  color: #d0d0d0;
+}
+input:focus, select:focus {
+  background: #393E46;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+/*# sourceMappingURL=utils.css.map */

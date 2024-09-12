@@ -1,0 +1,34 @@
+@import "_variables";
+@import "_typography";
+
+footer {
+  display: grid;
+  grid-template-columns: 12fr 1fr 12fr;
+
+
+
+  align-items: center;
+  flex-flow: row revert;
+
+
+  .logo-txt {
+    color: #d0d0d0;
+    background: linear-gradient(to right, $light-500 50%, $accent-500 60%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-wrap: nowrap;
+    font-family: archivo, sans-serif;
+    font-size: 5.95vw;
+    font-weight: 900;
+    letter-spacing: -0.2em;
+    word-spacing: 0.2em;
+    padding-right: 0.3em;
+  }
+
+  .logo {
+    position: relative;
+    height: 120px;
+    margin-top: 0;
+    filter: drop-shadow(0 0 16px color-opacity($accent-500, 0.4));
+  }
+}

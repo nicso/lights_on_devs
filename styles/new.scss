@@ -1,0 +1,50 @@
+@import "variables";
+
+#new{
+  padding: 50px;
+  display: grid;
+  width: 50vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+            "titleLabel titleInput"
+            "catagoryLabel categoryInput"
+            "project project"
+            "save publish";
+  gap: 20px;
+  border: 1px solid $accent-sub;
+  border-radius: 10px ;
+  margin: 50px auto 50px;
+
+  box-shadow: 20px 20px 50px black;
+
+  label[for="title"]{
+    grid-area: titleLabel;
+    font-size: 2rem;
+  }
+  #title{
+    font-size: 2rem;
+    grid-area: titleInput;
+  }
+  label[for="category"]{
+    font-size: 1rem;
+    grid-area: catagoryLabel;
+  }
+  #category{
+    font-size: 2rem;
+    grid-area: categoryInput;
+  }
+  #project{
+    grid-area: project;
+  }
+  #save{
+    grid-area: save;
+  }
+  #publish{
+    grid-area: publish;
+  }
+  .ProseMirror{
+    padding: 0;
+  }
+
+
+}

@@ -9,6 +9,9 @@
 
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="stylesheet" href="styles/utils.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/style.css">
     <title>Lights On Devs</title>
 </head>
@@ -19,7 +22,7 @@
         <ul id="navbar">
             <li id="brand">
                 <object id="logo" data="imgs/lod_logo.svg" type="image/svg+xml"></object>
-                <a class="logo-txt" href="http://localhost:63342/lights_on_devs/index.html">LIGHTS ON DEVS</a>
+                <a class="logo-txt" href="index.html">LIGHTS ON DEVS</a>
             </li>
 
             <li class="nav-links">
@@ -31,9 +34,10 @@
                 <button type="button" class="btn"><span class="material-symbols-outlined">notifications</span></button>
                 <button type="button" class="btn"><span class="material-symbols-outlined">mail</span></button>
                 <button type="button" class="btn btn-long btn-accent"><span
-                        class="material-symbols-outlined">edit</span>New Project
+                        class="material-symbols-outlined">edit</span>
+                    <a href="new.html">New Project</a>
                 </button>
-                <button type="button" class="btn"><span class="material-symbols-outlined">account_circle</span></button>
+                <button type="button" class="btn"><img class="user-avatar" src="" alt=""></button>
             </li>
 
         </ul>
@@ -58,7 +62,7 @@
                 <img class="trends-item-thumb" src="https://loremflickr.com/450/270" alt="image description">
 
                 <div class="trends-item-large-preview">
-                    <a href="#"><img class="trends-item-large-thumb" src="https://loremflickr.com/270/80"
+                    <a href="http://google.com"><img class="trends-item-large-thumb" src="https://loremflickr.com/270/80"
                                      alt="image description"></a>
                     <a href="#"><img class="trends-item-large-thumb" src="https://loremflickr.com/271/80"
                                      alt="image description"></a>
@@ -103,9 +107,9 @@
                         filter_list
                     </span>
                     <ul class="filterList">
-                       <li><a href="?filter=game">Game</a></li>
-                       <li><a href="?filter=audio">Audio</a></li>
-                       <li><a href="?filter=ux">Ux</a></li>
+                       <li><a href="?filter=game"   >Game</a></li>
+                       <li><a href="?filter=audio"  >Audio</a></li>
+                       <li><a href="?filter=ux"     >Ux</a></li>
                     </ul>
                 </div>
                 <input class="search-input" placeholder="Search..." id="search"></input>
@@ -164,6 +168,7 @@
 </footer>
 
 <script src="scripts/script.js"></script>
+<script src="scripts/users.js"></script>
 <script src="scripts/navigationBar.js"></script>
 
 </body>

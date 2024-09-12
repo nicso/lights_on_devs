@@ -1,0 +1,81 @@
+@import "_variables";
+@import "_typography";
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $bg-drk-500;
+  color: $light-500;
+  font-family: jakarta, serif;
+  overflow-x: hidden;
+}
+
+//#region buttons
+.btn {
+
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $light-500;
+  color: $drk-sub-500;
+  height: $icon-size;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    /*TODO: button focus style*/
+  }
+
+  &:hover {
+    background: hsl(from $light-500 h s calc(l*0.8));
+    /*TODO: button hover style*/
+  }
+
+  &-long {
+    display: inline-flex;
+    align-items: center;
+    aspect-ratio: auto;
+    padding-inline: 15px;
+  }
+
+  &-accent {
+    color: $drk-sub-500;
+    background: $accent-500;
+    &:hover {
+      background: hsl(from $accent-500 h s calc(l*0.8));
+      box-shadow: 0 0 20px  hsl(from $accent-500 h s l / 0.5);
+      /*TODO: button hover style*/
+    }
+  }
+}
+
+//#endregion
+
+
+input, select{
+  font-size: 1em;
+  width: 100%;
+  border: 1px solid $accent-sub;
+  border-radius: 5px;
+  background: $bg-drk-500;
+  color: $light-500;
+  &:focus{
+    background: $drk-sub-500;
+  }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+  // trick :
+  // https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied
+}
+

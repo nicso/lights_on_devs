@@ -1,0 +1,44 @@
+/*---COLORS---*/
+/*---SIZING---*/
+#new {
+  padding: 50px;
+  display: grid;
+  width: 50vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "titleLabel titleInput" "catagoryLabel categoryInput" "project project" "save publish";
+  gap: 20px;
+  border: 1px solid rgba(255, 211, 105, 0.3);
+  border-radius: 10px;
+  margin: 50px auto 50px;
+  box-shadow: 20px 20px 50px black;
+}
+#new label[for=title] {
+  grid-area: titleLabel;
+  font-size: 2rem;
+}
+#new #title {
+  font-size: 2rem;
+  grid-area: titleInput;
+}
+#new label[for=category] {
+  font-size: 1rem;
+  grid-area: catagoryLabel;
+}
+#new #category {
+  font-size: 2rem;
+  grid-area: categoryInput;
+}
+#new #project {
+  grid-area: project;
+}
+#new #save {
+  grid-area: save;
+}
+#new #publish {
+  grid-area: publish;
+}
+#new .ProseMirror {
+  padding: 0;
+}
+
+/*# sourceMappingURL=new.css.map */

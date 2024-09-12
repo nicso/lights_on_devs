@@ -5,14 +5,15 @@ body{
 #login{
   position: relative;
   display: flex;
+  gap: 20px;
   flex-direction: column;
-  height: 580px;
-  width: 400px;
+  height: auto;
+  width: 500px;
   justify-content: space-around;
   font-size: 1.5em;
   margin: 50px auto ;
   border: 1px solid $light-500;
-  padding: 100px;
+  padding: 50px 100px 100px;
   border-radius: 20px;
   background: $bg-drk-500;
   box-shadow: 20px 20px 80px black;
@@ -28,14 +29,7 @@ label{
   margin-bottom: 10px;
   font-size: 0.9em;
 }
-input{
-  font-size: 1em;
-  width: 100%;
-  border: 1px solid $light-500;
-  border-radius: 5px;
-  background: $bg-drk-500;
-  color: $light-500;
-}
+
 button{
   font-size: 1em;
   margin-bottom: 120px;
@@ -56,6 +50,8 @@ a{
   color: red;
   position: absolute;
   bottom: 60px;
+  filter: drop-shadow(0 0 30px $accent-500) drop-shadow(0 0 10px red);
+
 }
 @keyframes fadeOut {
   50%{
